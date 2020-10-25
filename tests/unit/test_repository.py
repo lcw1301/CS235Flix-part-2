@@ -6,23 +6,23 @@ from movie_app.domain.movie import Movie
 
 
 def test_repo_add_director(in_memory_repo):
-    director = Director('Peter Jackson')
+    director = Director('Michael Bay')
     in_memory_repo.add_director(director)
-    assert in_memory_repo.get_director('Peter Jackson') == director
+    assert in_memory_repo.get_director('Michael Bay') == director
 
 
 def test_repo_retrieve_director(in_memory_repo):
-    director = in_memory_repo.get_director('James Gunn')
-    assert director == Director('James Gunn')
+    director = in_memory_repo.get_director('Brad Pitt')
+    assert director == Director('Brad Pitt')
 
 
 def test_repo_does_not_retrieve_non_existent_director(in_memory_repo):
-    director = in_memory_repo.get_director('Bob')
+    director = in_memory_repo.get_director('Fake Director')
     assert director is None
 
 
 def test_repo_add_genre(in_memory_repo):
-    genre = Genre('Anime')
+    genre = Genre('Fantasy')
     in_memory_repo.add_genre(genre)
     assert genre in in_memory_repo.get_genres()
 
@@ -33,18 +33,18 @@ def test_repo_retrieve_genres(in_memory_repo):
 
 
 def test_repo_add_actor(in_memory_repo):
-    actor = Actor('Vin Diesel')
+    actor = Actor('Paul Walker')
     in_memory_repo.add_actor(actor)
-    assert in_memory_repo.get_actor('Vin Diesel') == actor
+    assert in_memory_repo.get_actor('Paul Walker') == actor
 
 
 def test_repo_retrieve_actor(in_memory_repo):
-    actor = in_memory_repo.get_actor('Vin Diesel')
-    assert actor == Actor('Vin Diesel')
+    actor = in_memory_repo.get_actor('Paul Walker')
+    assert actor == Actor('Paul Walker')
 
 
 def test_repo_does_not_retrieve_non_existent_actor(in_memory_repo):
-    actor = in_memory_repo.get_actor('Ace')
+    actor = in_memory_repo.get_actor('Fake Actor')
     assert actor is None
 
 
@@ -86,7 +86,7 @@ def test_repo_get_movies_by_ranks(in_memory_repo):
 def test_repo_does_not_retrieve_movie_for_non_existent_rank(in_memory_repo):
     movies = in_memory_repo.get_movies_by_rank([1000, 1001])
     assert len(movies) == 1
-    assert movies[0].title == 'Nine Lives'
+    assert movies[0].title == 'Fake Movie'
 
 
 def test_repo_returns_an_empty_list_for_non_existent_ranks(in_memory_repo):
