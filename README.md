@@ -28,7 +28,7 @@ C:\Users\Home> cd Documents\GitHub\CS235FlixP2 pip install -r requirements.txt
 From the *CS235Flix* directory, and within the activated virtual environment (see *venv\Scripts\activate* above):
 
 ````shell
-C:\Users\Home\Documents\CompsciPart2\Compsci235\A2\CS235Flix> flask run
+C:\Users\Home> cd Documents\GitHub\CS235FlixP2 flask run
 ```` 
 
 ## Configuration
@@ -47,7 +47,7 @@ Testing requires that file *CS235Flix/tests/conftest.py* be edited to set the va
 
 E.g. 
 
-`TEST_DATA_PATH = os.path.join('C:', os.sep, 'Users', 'Home', 'Documents', 'CompsciPart2', 'Compsci235', 'A2', 'CS235Flix', 'tests', 'data')`
+`TEST_DATA_PATH = os.path.join('C:', os.sep, 'Users', 'Home', 'Documents', 'GitHub', 'CS235Flix-part-2', 'tests', 'data')`
 
 assigns TEST_DATA_PATH with the following value (the use of os.path.join and os.sep ensures use of the correct platform path separator):
 
