@@ -20,7 +20,7 @@ def create_app(test_config=None):
         data_path = app.config['TEST_DATA_PATH']
 
     # Create the MemoryRepository implementation for a memory-based repository.
-    repo.repo_instance = MovieRepository()
+    repo.repo_instance = MemoryRepository()
     populate(data_path, repo.repo_instance)
 
     # Build the application - these steps require an application context.
