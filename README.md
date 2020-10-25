@@ -11,14 +11,14 @@ A web app that demonstrates use of Python's Flask framework. The application mak
 Navigate to the location/folder that you chose before, which now contains the *CS235Flix part 2* directory (i.e. the directory that has the movie_app\ and tests\ directories plus other files), and access the *CS235Flix part 2* directory.
 Instructions as shown below:
 ```shell
-C:\Users\Home> cd Documents\GitHub\CS235FlixP2
+C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2
 ```
 
 Next set of instructions:
 ```shell
-C:\Users\Home> cd Documents\GitHub\CS235FlixP2 py -3 -m venv venv
-C:\Users\Home> cd Documents\GitHub\CS235FlixP2 venv\Scripts\activate
-C:\Users\Home> cd Documents\GitHub\CS235FlixP2 pip install -r requirements.txt
+C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2 py -3 -m venv venv
+C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2 venv\Scripts\activate
+C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2 pip install -r requirements.txt
 ```
 
 ## Execution
@@ -28,7 +28,7 @@ C:\Users\Home> cd Documents\GitHub\CS235FlixP2 pip install -r requirements.txt
 From the *CS235Flix* directory, and within the activated virtual environment (see *venv\Scripts\activate* above):
 
 ````shell
-C:\Users\Home> cd Documents\GitHub\CS235FlixP2 flask run
+C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2 flask run
 ```` 
 
 ## Configuration
