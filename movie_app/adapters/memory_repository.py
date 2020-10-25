@@ -1,5 +1,4 @@
 import os
-from abc import ABC
 from typing import List
 from movie_app.adapters.repository import AbstractRepository
 from movie_app.datafilereaders.movie_file_csv_reader import MovieFileCSVReader
@@ -9,7 +8,7 @@ from movie_app.domain.genre import Genre
 from movie_app.domain.movie import Movie
 
 
-class MemoryRepository(AbstractRepository, ABC):
+class MemoryRepository(AbstractRepository):
 
     def __init__(self):
         self._directors = list()
