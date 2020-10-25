@@ -1,5 +1,8 @@
 import os
 from typing import List
+
+from werkzeug.security import generate_password_hash
+
 from movie_app.adapters.repository import AbstractRepository, RepositoryException
 from movie_app.datafilereaders.movie_file_csv_reader import MovieFileCSVReader
 from movie_app.domain.actor import Actor
@@ -11,7 +14,7 @@ from movie_app.domain.user import User
 from movie_app.domain.watchlist import WatchList
 
 
-class MovieRepository(AbstractRepository):
+class MemoryRepository(AbstractRepository):
 
     def __init__(self):
         self._directors = list()
@@ -78,11 +81,14 @@ class MovieRepository(AbstractRepository):
         return movies
 
     def get_movie_ranks_for_genre(self, genre_name: str):
+        # Linear search, to find the first occurrence of a Genre with the name genre_name.
         genre = next((genre for genre in self._genres if genre.genre_name == genre_name), None)
 
+        # Retrieve the ranks of movies associated with the Genre.
         if genre is not None:
             movie_ranks = [movie.rank for movie in self._movies if genre in movie.genres]
         else:
+            # No Genre with name genre_name. Return an empty list.
             movie_ranks = list()
         return movie_ranks
 
@@ -110,23 +116,55 @@ class MovieRepository(AbstractRepository):
         return all_watchlist
 
 
-def load_data(data_path: str, repo: MovieRepository):
+def load_data(data_path: str, repo: MemoryRepository):
     all_data = MovieFileCSVReader(os.path.join(data_path, 'Data1000Movies.csv'))
     all_data.read_csv_file()
 
+    # load directors into repository.
     for director in all_data.dataset_of_directors:
         repo.add_director(director)
 
+    # load genres into repository.
     for genre in all_data.dataset_of_genres:
         repo.add_genre(genre)
 
+    # load actors into repository.
     for actor in all_data.dataset_of_actors:
         repo.add_actor(actor)
 
+    # load movies into repository.
     for movie in all_data.dataset_of_movies:
         repo.add_movie(movie)
 
 
-def populate(data_path: str, repo: MovieRepository):
+def load_review_and_user(repo: MemoryRepository):
+    # load default review for default user into repository, then load default user into repository.
+    review = Review(
+        movie=repo.get_movie(1),
+        txt='GOTG is my new favourite movie of all time!',
+        rating=10
+    )
+    user = User(username='nton939', password=generate_password_hash('nton939Password'))
+    user.add_review(review)
+    repo.add_review(review)
+    repo.add_user(user)
+
+
+def load_watchlist(repo: MemoryRepository):
+    # load default watchlist for default user.
+    movies = repo.get_movies_by_rank([1, 2, 3, 4, 5])
+    watchlist = WatchList(user=repo.get_user('nton939'), watchlist_name='Watch Later')
+    for movie in movies:
+        watchlist.add_movie(movie)
+    repo.add_watchlist(watchlist)
+
+
+def populate(data_path: str, repo: MemoryRepository):
+    # Load directors, genres, actors and movies into the repository.
     load_data(data_path, repo)
 
+    # Load default review and user into the repository.
+    load_review_and_user(repo)
+
+    # Load default watchlist into the repository.
+    load_watchlist(repo)

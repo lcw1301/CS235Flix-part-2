@@ -34,9 +34,10 @@ class MovieFileCSVReader:
     def read_csv_file(self):
         with open(self.__file_name, mode='r', encoding='utf-8-sig') as csvfile:
             movie_file_reader = csv.DictReader(csvfile)
+
             i = 0
+
             for row in movie_file_reader:
-                # reading from csv
                 rank = int(row['Rank'].strip())
                 title = row['Title']
                 release_year = int(row['Year'].strip())

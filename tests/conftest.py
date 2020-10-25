@@ -2,14 +2,14 @@ import os
 import pytest
 from movie_app import create_app
 from movie_app.adapters import movie_repository
-from movie_app.adapters.movie_repository import MovieRepository
+from movie_app.adapters.movie_repository import MemoryRepository
 
 TEST_DATA_PATH = os.path.join('C:', os.sep, 'Users', 'Home', 'Documents', 'GitHub', 'CS235-part-2', 'tests', 'data')
 
 
 @pytest.fixture
 def in_memory_repo():
-    repo = MovieRepository()
+    repo = MemoryRepository()
     movie_repository.populate(TEST_DATA_PATH, repo)
     return repo
 
