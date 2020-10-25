@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>CS235Flix</title>
+
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/style.css') }}"
+        />
+    </head>
+
+    <body>
+        <div id="body">
+            <div id="navigation">
+                <nav id="nav">
+                    <a class="btn-nav" id="home-btn" href="{{ url_for('home_bp.home') }}">Home</a>
+
+                    <div>
+                        <h3>
+                            <a class="btn-nav" href="{{ url_for('movies_bp.movies_by_rank') }}">
+                                Browse Top Rated Movies
+                            </a>
+                        </h3>
+                    </div>
+                </nav>
+            </div>
+
+            <div id="container">
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
