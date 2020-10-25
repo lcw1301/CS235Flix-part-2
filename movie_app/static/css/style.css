@@ -128,11 +128,6 @@ h3 {
   padding: 20px 10px 0px 10px;
 }
 
-#sidebar-title {
-  padding: 10px;
-  border: 2px white;
-}
-
 
 #like-btn:hover, #like-btn:active, #like-btn:focus {
   filter: invert(100%);
