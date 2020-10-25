@@ -17,9 +17,6 @@ class MemoryRepository(AbstractRepository, ABC):
         self._actors = list()
         self._movies = list()
         self._movies_index = dict()
-        self._reviews = list()
-        self._users = list()
-        self._all_watchlist = list()
 
     def add_director(self, director: Director):
         self._directors.append(director)
