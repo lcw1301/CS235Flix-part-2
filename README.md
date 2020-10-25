@@ -59,5 +59,5 @@ You can then run tests from within PyCharm.
 
 From the *CS235Flix* directory, and within the activated virtual environment (see *venv\Scripts\activate* in the **Installation** guide):
 ```shell
-C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2> python -m pytest
+C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2 python -m pytest
 ```
