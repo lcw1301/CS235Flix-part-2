@@ -2,7 +2,7 @@
 import os
 from flask import Flask
 import movie_app.adapters.repository as repo
-from movie_app.adapters.movie_repository import MemoryRepository, populate
+from movie_app.adapters.memory_repository import MemoryRepository, populate
 
 
 def create_app(test_config=None):

@@ -37,7 +37,6 @@ def test_director_hash():
     assert hash(director1)
 
 
-# Genre Unit Tests
 def test_genre_name():
     genre1 = Genre("Comedy")
     assert repr(genre1) == "<Genre Comedy>"
@@ -47,7 +46,6 @@ def test_genre_name():
     assert genre3.genre_name is None
 
 
-# Actor Unit Tests
 def test_actor_full_name():
     a1 = Actor("Taika Waititi")
     assert repr(a1) == "<Actor Taika Waititi>"
