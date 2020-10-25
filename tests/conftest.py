@@ -4,7 +4,7 @@ from movie_app import create_app
 from movie_app.adapters import memory_repository
 from movie_app.adapters.memory_repository import MemoryRepository
 
-TEST_DATA_PATH = os.path.join('C:', os.sep, 'Users', 'Home', 'Documents', 'GitHub', 'CS235-part-2', 'tests', 'data')
+TEST_DATA_PATH = os.path.join('C:', os.sep, 'Users', 'Home', 'Documents', 'GitHub', 'CS235Flix-part-2', 'tests', 'data')
 
 
 @pytest.fixture
