@@ -1,5 +1,4 @@
 from typing import List
-
 from movie_app.domain.actor import Actor
 from movie_app.domain.director import Director
 from movie_app.domain.genre import Genre
@@ -56,16 +55,6 @@ def test_repo_can_add_movie(in_memory_repo):
     assert in_memory_repo.get_movie(1001) == movie
 
 
-def test_repo_can_retrieve_movie(in_memory_repo):
-    movie = in_memory_repo.get_movie(1)
-    assert movie.title == 'Guardians of the Galaxy'
-
-    user = in_memory_repo.get_user('nton939')
-    assert user.reviews[0].review_text == 'GOTG is my new favourite movie of all time!'
-
-    assert movie.genres == [Genre('Action'), Genre('Adventure'), Genre('Sci-Fi')]
-
-
 def test_repo_does_not_retrieve_non_existent_movie(in_memory_repo):
     movie = in_memory_repo.get_movie(0)
     assert movie is None
@@ -93,6 +82,7 @@ def test_repo_can_get_movies_by_ranks(in_memory_repo):
     assert movies[1].title == 'Prometheus'
     assert movies[2].title == 'Split'
 
+
 def test_repo_does_not_retrieve_movie_for_non_existent_rank(in_memory_repo):
     movies = in_memory_repo.get_movies_by_rank([1000, 1001])
     assert len(movies) == 1
@@ -102,13 +92,3 @@ def test_repo_does_not_retrieve_movie_for_non_existent_rank(in_memory_repo):
 def test_repo_returns_an_empty_list_for_non_existent_ranks(in_memory_repo):
     movies = in_memory_repo.get_movies_by_rank([1111, 2222])
     assert len(movies) == 0
-
-
-def test_repo_returns_movie_ranks_for_existing_genre(in_memory_repo):
-    movie_ranks = in_memory_repo.get_movie_ranks_for_genre('Action')
-    assert len(movie_ranks) == 303
-
-
-def test_repo_returns_an_empty_list_for_non_existent_genre(in_memory_repo):
-    movie_ranks = in_memory_repo.get_movie_ranks_for_genre('Anime')
-    assert len(movie_ranks) == 0
