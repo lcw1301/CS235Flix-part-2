@@ -51,7 +51,7 @@ E.g.
 
 assigns TEST_DATA_PATH with the following value (the use of os.path.join and os.sep ensures use of the correct platform path separator):
 
-`C:\Users\Home> cd Documents\GitHub\CS235FlixP2\tests\data`
+`C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2\tests\data`
 
 You can then run tests from within PyCharm.
 
@@ -59,5 +59,5 @@ You can then run tests from within PyCharm.
 
 From the *CS235Flix* directory, and within the activated virtual environment (see *venv\Scripts\activate* in the **Installation** guide):
 ```shell
-C:\Users\Home> cd Documents\GitHub\CS235FlixP2> python -m pytest
+C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2> python -m pytest
 ```
