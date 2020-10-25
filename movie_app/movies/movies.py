@@ -8,7 +8,7 @@ movies_blueprint = Blueprint('movies_bp', __name__)
 
 @movies_blueprint.route('/movies_by_rank', methods=['GET'])
 def movies_by_rank():
-    movies_per_page = 1
+    movies_per_page = 2
 
     cursor = request.args.get('cursor')
 
