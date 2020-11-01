@@ -43,7 +43,7 @@ The *CS235Flix-part-2/.env* file contains variable settings. They are set with a
 
 ## Testing
 
-Testing requires that file *CS235Flix-part-2/tests/conftest.py* be edited to set the value of `TEST_DATA_PATH`. You should set this to the absolute path of the *CS235Flix/tests/data* directory. 
+Testing requires that file *CS235Flix-part-2/tests/conftest.py* be edited to set the value of `TEST_DATA_PATH`. You should set this to the absolute path of the *CS235Flix-part-2/tests/data* directory. 
 
 E.g. 
 
