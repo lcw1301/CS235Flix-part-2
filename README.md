@@ -25,7 +25,7 @@ C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2 pip install -r requirements.
 
 **Running the application**
 
-From the *CS235Flix* directory, and within the activated virtual environment (see *venv\Scripts\activate* above):
+From the *CS235Flix-part-2* directory, and within the activated virtual environment (see *venv\Scripts\activate* above):
 
 ````shell
 C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2 flask run
@@ -33,7 +33,7 @@ C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2 flask run
 
 ## Configuration
 
-The *CS235Flix/.env* file contains variable settings. They are set with appropriate values.
+The *CS235Flix-part-2/.env* file contains variable settings. They are set with appropriate values.
 
 * `FLASK_APP`: Entry point of the application (should always be `wsgi.py`).
 * `FLASK_ENV`: The environment in which to run the application (either `development` or `production`).
@@ -43,7 +43,7 @@ The *CS235Flix/.env* file contains variable settings. They are set with appropri
 
 ## Testing
 
-Testing requires that file *CS235Flix/tests/conftest.py* be edited to set the value of `TEST_DATA_PATH`. You should set this to the absolute path of the *CS235Flix/tests/data* directory. 
+Testing requires that file *CS235Flix-part-2/tests/conftest.py* be edited to set the value of `TEST_DATA_PATH`. You should set this to the absolute path of the *CS235Flix-part-2/tests/data* directory. 
 
 E.g. 
 
@@ -57,7 +57,7 @@ You can then run tests from within PyCharm.
 
 **Running the tests via the Command Prompt window**
 
-From the *CS235Flix* directory, and within the activated virtual environment (see *venv\Scripts\activate* in the **Installation** guide):
+From the *CS235Flix-part-2* directory, and within the activated virtual environment (see *venv\Scripts\activate* in the **Installation** guide):
 ```shell
 C:\Users\Home> cd Documents\GitHub\CS235Flix-part-2 python -m pytest
 ```
